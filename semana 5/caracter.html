@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cáracter</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body onload="caracter()">
+
+    <div id="unoauno"> </div>
+
+    <script>
+        var frase = prompt("Escribe una frase");
+
+        function caracter(){
+
+            cadena = frase.toLowerCase().replace( /\d+/g, '').split('').join(' ');
+
+            document.getElementById("unoauno").innerHTML += "<h1> " + cadena + " </h1>";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrasena</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(24, 24, 25);
+        }
+
+        p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 25px;
+        }
+
+        input {
+            background-color: transparent;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            color: white;
+            font-size: 14px;
+            border: none;
+            outline: none;
+            outline-offset: none;
+            width: 80%;
+            letter-spacing: -1px;
+        }
+
+        h1 {
+            color: rgb(188, 187, 187);
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contenido {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contrasenacaja{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .btnresultado {
+            background-color: rgb(5, 181, 75);
+            border: none;
+            width: 20%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenido">
+        <h1 class="resultado" id="result">Contraseña de acceso</h1>
+        <div class="contrasenacaja">
+            <input type="password" placeholder="Dijite la contraseña que resivio en la invitación al foro" id="contrasenaIN">
+            <button class="btnresultado" onclick="login()">
+                <span class="material-symbols-outlined">
+                    key
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <script>    
+
+        function login(){
+            const clave = '1234' ;
+            const contrasena = document.getElementById('contrasenaIN').value;
+
+            if(clave === contrasena){
+                alert('Bienvenido al Foro, sea prudente!');
+                document.getElementById('contrasenaIN').value = ''
+            } else {
+                alert('Contraseña incorrecta para ingresar al Foro')
+            }
+        }
+    </script>
+
+</body>
+
+</html>

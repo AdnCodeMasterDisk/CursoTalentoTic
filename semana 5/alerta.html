@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar alerta</title>
+</head>
+<body>
+    <script>
+        var Variable = "Variable Global"
+
+        function interna(){
+            var Variable = "Variable Interna";
+            alert(Variable)
+        }
+
+        alert(Variable);
+        interna()
+    </script>
+</body>
+</html>

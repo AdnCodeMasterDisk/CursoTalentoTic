@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cáracter</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body onload="tipo()">
+
+    <div id="tipodenumero"> </div>
+
+    <script>
+        var numero = prompt("Escribe un numero");
+
+        function tipo(){
+
+            cadena = numero % 2 === 0;
+
+            if(cadena){
+                document.getElementById("tipodenumero").innerHTML += "<h1>  El " + numero + " es un número Par </h1>";
+            } else {
+                document.getElementById("tipodenumero").innerHTML += "<h1>  El " + numero + " es un número Inpar </h1>";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

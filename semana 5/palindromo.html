@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromo</title>
+</head>
+<!--
+cadena.split(''): La cadena original se convierte en un array de caracteres utilizando el método split(''). Aquí, ' ' indica que la cadena se dividirá en cada carácter individual. Por ejemplo, si cadena es "reconocer", después de este paso tendríamos ["r", "e", "c", "o", "n", "o", "c", "e", "r"].
+
+.reverse(): El método reverse() invierte el orden de los elementos en el array. En el ejemplo anterior, después de este paso, tendríamos ["r", "e", "c", "o", "n", "o", "c", "e", "r"] invertido sería ["r", "e", "c", "e", "c", "o", "n", "o", "r"].
+
+.join(''): El método join('') une todos los elementos del array en una cadena. Como no se proporciona ningún separador entre los elementos, se concatenan directamente. Después de este paso, la cadena sería "recocenor".
+
+cadena === ...: Finalmente, la línea compara la cadena original (cadena) con la cadena invertida y reconstruida (cadena.split('').reverse().join('')). Si son idénticas, es decir, si la cadena es un palíndromo, esta expresión devolverá true. De lo contrario, devolverá false.
+
+Entonces, en resumen, la línea return cadena === cadena.split('').reverse().join(''); verifica si la cadena original es igual a su versión invertida, lo que es una manera eficiente de determinar si una cadena es un palíndromo.
+-->
+<body>
+    <script>
+        function esPalindromo(cadena){
+            return cadena === cadena.split('').reverse().join('');
+        }
+
+        let texto = prompt("Ingresa la palabra que quieras saber si es palíndromo");
+
+        if(esPalindromo(texto)){
+            alert("Genial," + texto + " es es un palíndromo")
+        } else {
+            alert("Sabes?," + texto + " no es es un palíndromo")
+        }
+
+
+    </script>
+</body>
+</html>

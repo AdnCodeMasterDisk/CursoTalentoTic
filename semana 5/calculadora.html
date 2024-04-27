@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(51, 52, 53);
+        }
+
+        p{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 25px;
+        }
+        .contenido{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+        }
+
+        input{
+            background-color: transparent;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            color: white;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            outline-offset: none;
+        }
+
+        h1{
+            color: white;
+            text-align: right;
+            font-size: 90px;
+        }
+
+        .operaciones{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .btnoperacion{
+            background-color: rgb(10, 83, 146);
+            border: none;
+            width: 24.5%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 30px;
+            color: white;
+        }
+        
+        .btnresultado{
+            background-color: rgb(205, 2, 70);
+            border: none;
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body>
+    <div class="contenido">
+        <h1 class="resultado" id="result">0</h1>
+        <input type="number" placeholder="Número 1" id="numero1" >
+        <div class="operaciones">
+            <button class="btnoperacion" onclick="operacion('+')">
+                <span class="material-symbols-outlined">
+                    add_circle
+                </span>
+            </button>
+            <button class="btnoperacion" onclick="operacion('-')">
+                <span class="material-symbols-outlined">
+                    unknown_5
+                    </span>
+            </button>
+            <button class="btnoperacion" onclick="operacion('*')">
+                <span class="material-symbols-outlined">
+                    cancel
+                </span>
+            </button>
+            <button class="btnoperacion" onclick="operacion('/')" >
+                <span class="material-symbols-outlined" style="rotate: 45deg;">
+                    percent
+                </span>
+            </button>
+        </div>
+        <input type="number" placeholder="Número 2" id="numero2">
+        <button class="btnresultado" onclick="resultadoOperacion('suma')">
+            <span class="material-symbols-outlined">
+                equal
+            </span>
+        </button>
+    </div>
+
+
+<script>
+
+    let operacionGloblal = operacion;
+
+    function operacion(operador){
+        var numero1 = parseInt(document.getElementById("numero1").value);
+        var numero2=  parseInt(document.getElementById("numero2").value);
+        window.operadorGlobal = operador;    
+        document.getElementById('result').innerHTML = '';    
+        document.getElementById('result').innerHTML += operador;
+    }
+
+    function resultadoOperacion( ) {
+        var numero1 = parseInt(document.getElementById("numero1").value);
+        var numero2=  parseInt(document.getElementById("numero2").value);
+
+        switch(window.operadorGlobal){
+            case "+":
+                resultado = numero1 + numero2;
+                document.getElementById('result').innerHTML = '+';
+                break;
+            case "-":
+                resultado = numero1 - numero2;
+                break;
+            case "*":
+                resultado = numero1 * numero2;
+                break;
+            case "/":
+                resultado = numero1 / numero2;
+                break;
+        }
+        
+
+        document.getElementById('result').innerHTML = '';
+        document.getElementById('result').innerHTML += resultado;
+        var numero1 = document.getElementById("numero1").value = '';
+        var numero2=  document.getElementById("numero2").value = '';
+    }
+
+</script>
+    
+</body>
+</html> 
